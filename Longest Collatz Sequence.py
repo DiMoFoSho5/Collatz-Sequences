@@ -1,3 +1,4 @@
+# function for determining which Collatz rule to apply
 def even_check(x):
     if x % 2 == 0:
         return True
@@ -15,6 +16,7 @@ def do_math(x):
     return number
 
 
+# function that stores the full Collatz Sequence of each number
 def get_sequence(x):
     sequence = []
     next_num = 0
@@ -34,11 +36,13 @@ def get_sequence(x):
 
 new_sequence = []
 
-for i in range(1, 1000000):
+# CHANGE THIS n to set the highest number you would like to check for Collatz Sequence length
+for i in range(1, n + 1):
     sequence_check = []
     sequence_check += get_sequence(i)
 
     if len(sequence_check) > len(new_sequence):
         new_sequence = sequence_check
 
+# prints the starting number of the sequence; you can delete the [0] to print the whole Collatz Sequence if you would like
 print(new_sequence[0])
